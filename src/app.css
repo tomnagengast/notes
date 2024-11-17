@@ -1,0 +1,20 @@
+@import url('https://fonts.bunny.net/css?family=libre-franklin:800');
+@import '@fontsource/atkinson-hyperlegible';
+@import '@fontsource/jetbrains-mono';
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+a {
+	@apply font-bold text-blue-700 text-xl;
+}
+
+.title {
+	font-family: 'Libre Franklin', serif;
+}
+
+.nav-items .link-active {
+	@apply bg-blue-200 text-blue-700;
+}
