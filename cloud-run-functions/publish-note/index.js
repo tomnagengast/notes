@@ -1,45 +1,29 @@
+const functions = require("@google-cloud/functions-framework");
+// const { Octokit } = require('@octokit/rest');
 
-const functions = require('@google-cloud/functions-framework');
-const express = require('express');
-const cors = require('cors');
+functions.http("publishNote", async (req, res) => {
+    const config = {
+      owner: 'tomnagengast',
+      repo: 'notes',
+      token: process.env.GITHUB_TOKEN
+    };
 
-// Create an express instance to use middleware
-const app = express();
+    // const octokit = new Octokit({
+    //     auth: config.token
+    // });
 
-// Add middleware
-app.use(cors());
-app.use(express.json());
+    // const lastCommit = await octokit.rest.repos.listCommits({
+    //     owner: config.owner,
+    //     repo: config.repo,
+    //     per_page: 1
+    // });
+    // const lastCommitDate = lastCommit.data[0].commit.author.date;
+    const lastCommitDate = "timestamp"
 
-// Main function handler
-const handler = async (req, res) => {
-  try {
-    // Enable CORS headers
-    res.set('Access-Control-Allow-Origin', '*');
-    res.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-    res.set('Access-Control-Allow-Headers', 'Content-Type');
-
-    // Handle OPTIONS request
-    if (req.method === 'OPTIONS') {
-      res.status(204).send('');
-      return;
-    }
-
-    console.log('Request headers:', req.headers);
-    console.log('Request body:', req.body);
-    console.log('Request method:', req.method);
-    console.log('Request query:', req.query);
-
-    res.status(200).json({
-      receivedHeaders: req.headers,
-      receivedBody: req.body,
-      receivedMethod: req.method,
-      receivedQuery: req.query
-    });
-  } catch (error) {
-    console.error('Error:', error);
-    res.status(500).json({ error: error.message });
-  }
-};
-
-// Apply middleware and register the function
-functions.http('publishNote', app.use(handler));
+    const msg = `
+    Hello ${req.query.name || req.body.name || "World"}!
+    You sent: ${JSON.stringify(req.body)}
+    Last commit for ${config.owner}/${config.repo} was at ${lastCommitDate}
+    `
+    res.send(msg);
+});
