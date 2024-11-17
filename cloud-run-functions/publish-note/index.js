@@ -1,5 +1,4 @@
 const functions = require("@google-cloud/functions-framework");
-// const { Octokit } = require('@octokit/rest');
 
 functions.http("publishNote", async (req, res) => {
     const config = {
@@ -8,19 +7,17 @@ functions.http("publishNote", async (req, res) => {
       token: process.env.GITHUB_TOKEN
     };
 
-    // const octokit = new Octokit({
-    //     auth: config.token
-    // });
-
-    // const lastCommit = await octokit.rest.repos.listCommits({
-    //     owner: config.owner,
-    //     repo: config.repo,
-    //     per_page: 1
-    // });
-    // const lastCommitDate = lastCommit.data[0].commit.author.date;
-    // const lastCommitAuthor = lastCommit.data[0].commit.author.name;
-    const lastCommitDate = "timestamp"
-    const lastCommitAuthor = "author"
+    const response = await fetch(`https://api.github.com/repos/${config.owner}/${config.repo}/commits?per_page=1`, {
+        headers: {
+            'Authorization': `Bearer ${config.token}`,
+            'Accept': 'application/vnd.github.v3+json'
+        }
+    });
+    const commits = await response.json();
+    const lastCommitDate = commits[0].commit.author.date;
+    const lastCommitAuthor = commits[0].commit.author.name;
+    // const lastCommitDate = "timestamp"
+    // const lastCommitAuthor = "author"
 
     const msg = `
     Hello ${req.query.name || req.body.name || "World"}!
