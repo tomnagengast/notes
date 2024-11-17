@@ -16,8 +16,6 @@ functions.http("publishNote", async (req, res) => {
     const commits = await response.json();
     const lastCommitDate = commits[0].commit.author.date;
     const lastCommitAuthor = commits[0].commit.author.name;
-    // const lastCommitDate = "timestamp"
-    // const lastCommitAuthor = "author"
 
     const msg = `
     Hello ${req.query.name || req.body.name || "World"}!
