@@ -1,8 +1,6 @@
 {
-	"scripts": {
-		"start": "npx functions-framework"
-	},
-    "dependencies": {
-        "@google-cloud/functions-framework": "^3.0.0"
-    }
+	"dependencies": {
+		"@google-cloud/functions-framework": "^3.0.0",
+		"@octokit/rest": "^21.0.2"
+	}
 }
