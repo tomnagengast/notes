@@ -17,8 +17,9 @@ gcloud beta run deploy $(basename $(pwd)) \
       --source . \
       --function publishNote \
       --region us-central1 \
-      --allow-unauthenticated \
-      --set-env-vars GITHUB_TOKEN=github-token
+      --allow-unauthenticated
+
+gcloud beta run deploy SERVICE --image IMAGE_URL --update-secrets=ENV_VAR_NAME=SECRET_NAME:VERSION
 ```
 
 ```sh
