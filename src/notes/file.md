@@ -1,5 +1,5 @@
 bplist00Ñ_WebMainResourceÕ	
-_WebResourceTextEncodingName_WebResourceData_WebResourceMIMEType_WebResourceFrameName^WebResourceURLUUTF-8OÔ<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+_WebResourceTextEncodingName_WebResourceData_WebResourceMIMEType_WebResourceFrameName^WebResourceURLUUTF-8O	<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,7 +20,7 @@ span.Apple-tab-span {white-space:pre}
 <p class="p2"><span class="s2">---</span></p>
 <p class="p2"><span class="s2">title: First post</span></p>
 <p class="p2"><span class="s2">description: First post.</span></p>
-<p class="p2"><span class="s2">date: '2023-4-14'</span></p>
+<p class="p2"><span class="s2">date: '<a href="x-apple-data-detectors://embedded-result/68">2025-01-01</a>'</span></p>
 <p class="p2"><span class="s2">categories:</span></p>
 <p class="p2"><span class="s2"><span class="Apple-converted-space">Â  </span>- general</span></p>
 <p class="p2"><span class="s2">published: true</span></p>
@@ -39,4 +39,4 @@ span.Apple-tab-span {white-space:pre}
 <p class="p2"><span class="s2">```</span></p>
 </body>
 </html>
-Ytext/htmlP_file:///index.html(FXn…”š	r	|	}	’
+Ytext/htmlP_file:///index.html(FXn…”š	­	·	¸	Í
